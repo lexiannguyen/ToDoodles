@@ -98,8 +98,6 @@ def addassignmentwindow():
 add = Button(options, text="Add Assignment!", command=addassignmentwindow)
 add.grid(row=0, column=0)
 
-
-
 #view assignments stuff
 def viewassignmentswindow():
   viewassign = Toplevel()
