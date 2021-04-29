@@ -16,7 +16,7 @@ planner.configure(background='white')
 planner.title('toDoodles')
 
 
-toDoodles = Label(planner, text="⁽˙̄˟˙̄⁾ toDoodles ⁽˙̄˟˙̄⁾", relief=RAISED,padx = 10, pady =10, bg = "pink", font=("Helvetica", 25))
+toDoodles = Label(planner, text="⁽˙̄˟˙̄⁾ toDoodles ⁽˙̄˟˙̄⁾", relief=RAISED,padx = 10, pady =10, bg = "#C0B9E2", font=("Helvetica", 25), fg = "white")
 toDoodles.grid(row=0, columnspan=3, pady = 15)
 
 options = LabelFrame(planner,
@@ -33,9 +33,6 @@ plant = LabelFrame(planner,
                      pady=10,
                      bg="light green")
 plant.grid(row = 1, column=0, padx=10, pady=0)
-# plant_img = ImageTk.PhotoImage(Image.open('resized-image-Promo.jpeg'))
-# plant_pic = Label(plant, image=plant_img)
-# plant_pic.grid(row=0, column=0)
 image = Image.open('resized.jpeg')
 image = image.resize((100, 100))
 my_img = ImageTk.PhotoImage(image)
@@ -130,6 +127,12 @@ def viewplantwindow():
   vplant = Toplevel()
   vplant.title('view plant')
   vplabel = Label(vplant, text='view plant').grid(row=0, column=0)
+  image = Image.open('resized.jpeg')
+  image1 = image.resize((100, 100))
+  my_img = ImageTk.PhotoImage(image1)
+  my_pic = Label(viewplantwindow, image = my_img)
+  my_pic.grid(row=1, column=0)
+
 
 view_plant = Button(options, text='view your plant!', command=viewplantwindow)
 view_plant.grid(row=2, column=0)
