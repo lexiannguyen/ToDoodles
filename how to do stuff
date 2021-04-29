@@ -1,0 +1,11 @@
+rectangles!
+- (a, b, c, d)
+-  a and c = X
+-  b and d = y
+- the rectangle will be within the 2 x and 2 y values
+- canvas.create_rectangle(230, 10, 290, 60,outline="black", fill="light blue", width=2)
+
+buttons:
+
+new windows:
+

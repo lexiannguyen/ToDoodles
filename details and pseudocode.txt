@@ -1,0 +1,67 @@
+some details: ⁽˙̄˟˙̄⁾
+  - plant, a must. 
+    > a fern, perhaps? 
+    > an onion. 
+    > a marble queen pothos. 
+    > the one that closes when you touch it.. touchmenot or something; could have it slowly open up instead of grow idkidk oooh yeah that sounds nice, or we could do a flower blooming or a fruit growing
+
+  - display a list of tasks
+    > title of task
+    > due dates
+    > subject/period
+    > type of work (hw, test, project, etc.)
+    > status of completion? (not started, in progress, completed) 
+    
+    Where do you guys want to store this data (MongoDB, Txt File, Json File)
+
+  - Implement a timer for each of the tasks
+  - A custom ringtone after a timer goes off
+  - a reminder maybe? oo desktop notif? 
+
+  - maybe have a minigame after a task is completed if we finish the project early... 
+    > can use the snake game / turtle racer we made
+
+
+what will it look like?
+- have a selection screen? 
+  > 1. add assignment
+  > 2. see planner/to-do list
+  > 3. plant
+  > 4. 
+
+
+
+                    !!!!!!!!!!PSEUDOCODE!!!!!!!!!!
+
+  1 display menu options and title [done!]
+    > add assignment
+    > see all assignments/tasks
+    > check off an assignment
+    > visit plant
+    > timer?
+
+  2. display picture of plant and other main menu things
+    > struggle with that for an hour
+    > frantically googling [lexian]
+  
+
+  3. ask for user input for menu options (used buttons instead)  
+    > if they choose to add an option, direct to options page 
+    > if see assignments, direct to assignments page [done!]
+    > if plant, direct to plant page [done!]
+    > if timer, direct to timer page
+
+  4. create pages for each option [done!] 
+  5. create input thingies for for user to create     assignments [almost done!]
+
+
+  6. user will be able to check off assignments using checkboxes?
+    - get rid of checked off assignments 
+
+  7. change plant image everytime user finishes assignment
+
+  8. make a database for assignments?? how to do idkidk
+
+  9. world domination or something
+
+

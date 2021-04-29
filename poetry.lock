@@ -1,0 +1,17 @@
+[[package]]
+category = "main"
+description = "Scrollable frame widget for Tkinter"
+name = "tkscrolledframe"
+optional = false
+python-versions = "*"
+version = "1.0.4"
+
+[metadata]
+content-hash = "5dcf12cf2355c7f7574c521acc4f951ce5ae900dc8aae86454c5098c8051363f"
+python-versions = "^3.8"
+
+[metadata.files]
+tkscrolledframe = [
+    {file = "tkScrolledFrame-1.0.4-py2.py3-none-any.whl", hash = "sha256:f706f14df065213862bdb5aa920e1bd29660d06a0653499ef5185a8bc73035c7"},
+    {file = "tkScrolledFrame-1.0.4.tar.gz", hash = "sha256:3635e80830e6b4eb3d5209fec0d72baa1fa31567ebcdf0d662c636adeabcb4d1"},
+]
