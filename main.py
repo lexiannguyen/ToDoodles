@@ -16,6 +16,13 @@ planner = tkinter.Tk()
 planner.configure(background='white')
 planner.title('toDoodles')
 
+def aa_buttonClicked():
+    file = open("assignments.txt", 'a')
+    dict_keys = [title_var.get(), due_date_var.get(), subject_var.get(), type_var.get()]
+    file.write(dict_keys[0]+"\t"+dict_keys[1]+"\t"+dict_keys[2]+"\t"+dict_keys[3]+"\n")
+    file.close()
+    add_assignment.destroy()
+
 toDoodles = Label(planner,
                   text="⁽˙̄˟˙̄⁾ toDoodles ⁽˙̄˟˙̄⁾",
                   relief=RAISED,
@@ -81,52 +88,49 @@ clock()
 
 #add assignment stuffs
 def addassignmentwindow():
-    addassign = Toplevel()
-    addassign.title('add assignment')
-    add_button = Button(
-        addassign,
-        text='add assignment', bg='white',
-        command=addassign.destroy,)
-        #command=lambda: [addassignmentwindow(),
-                         #add_checkbox()],
-        #bg='light pink')
+    global title_var
+    global due_date_var
+    global subject_var
+    global type_var
+
+    title_var = StringVar()
+    due_date_var = StringVar()
+    subject_var = StringVar()
+    type_var = StringVar()
+    global add_assignment
+    add_assignment = Toplevel()
+    add_assignment.title("add assignment")
+
+    title_label = Label(add_assignment, text="title", bg="#B6DFD8")
+    title_entry = Entry(add_assignment, textvariable=title_var)
+
+    due_date_label = Label(add_assignment, text="due date:", bg="#B6C2DF")
+    due_date_entry = Entry(add_assignment, textvariable=due_date_var)
+
+    subject_label = Label(add_assignment, text="subject", bg="#D2B6DF")
+    subject_entry = Entry(add_assignment, textvariable=subject_var)
+
+    type_label = Label(add_assignment, text="type of work", bg="#DFB6B6")
+    type_entry = Entry(add_assignment, textvariable=type_var)
+
+    add_button = Button(add_assignment, text='add assignment', command=aa_buttonClicked, bg='light pink')
+
+    title_label.grid(row=1, column=0, pady=10, padx=10, sticky='E')
+    title_entry.grid(row=1, column=2, sticky='W', padx=10)
+
+    subject_label.grid(row=3, column=0, pady=10, padx=10, sticky='E')
+    subject_entry.grid(row=3, column=2, sticky='W', padx=10)
+
+    due_date_label.grid(row=2, column=0, pady=10, padx=10, sticky='E')
+    due_date_entry.grid(row=2, column=2, sticky='W', padx=10)
+
+    type_label.grid(row=4, column=0, pady=10, padx=10, sticky='E')
+    type_entry.grid(row=4, column=2, sticky='W', padx=10)
+
     add_button.grid(row=5, column=2, padx=10, pady=10)
-
-    title = Label(addassign, text="title:", bg="#B6DFD8").grid(row=1,
-              column=0,
-              pady=10,
-              padx=10,
-              sticky='E')
-    title_input = Entry(addassign).grid(row=1, column=2, sticky='W', padx=10)
-
-    due_date = Label(addassign, text="due date:",
-              bg="#B6C2DF").grid(row=2,
-              column=0,
-              pady=10,
-              padx=10,
-              sticky='E')
-    due_date_input = Entry(addassign).grid(row=2,
-              column=2,
-              sticky='W',
-              padx=10)
-    subject = Label(addassign, text="subject:", bg="#D2B6DF").grid(row=3,
-              column=0,
-              pady=10,
-              padx=10,
-              sticky='E')
-    subject_input = Entry(addassign).grid(row=3, column=2, sticky='W', padx=10)
-    type_of_work = Label(addassign, text="type of work:",
-              bg="#DFB6B6").grid(row=4,
-              column=0,
-              pady=10,
-              padx=10,
-              sticky='E')
-    type_input = Entry(addassign).grid(row=4, column=2, sticky='W', padx=10)
-
 
 add = Button(options, text="Add Assignment!", bg='#E4F7FF', command=addassignmentwindow)
 add.grid(row=0, column=0)
-
 
 #view assignments stuff
 def viewassignmentswindow():
@@ -164,6 +168,18 @@ def viewassignmentswindow():
         pady=10,
         padx=10,
     )
+
+    file = open("assignments.txt", 'r')
+    contents = file.read().split('\n')
+    for i in range(len(contents)-1):
+        newcontents = contents[i].split('\t')
+        print(newcontents)
+        for n in range(len(newcontents)):
+
+            t_text = Label(viewassign, text=newcontents[0]).grid(row=i+2, column=0, pady=10, padx=10)
+            d_text = Label(viewassign, text=newcontents[1]).grid(row=i+2, column=1, pady=10, padx=10)
+            s_text = Label(viewassign, text=newcontents[2]).grid(row=i+2, column=2, pady=10, padx=10)
+            ty_text = Label(viewassign, text=newcontents[3]).grid(row=i+2, column=3, pady=10, padx=10)
 
 
 view = Button(options, text="View Assignments!", bg='#E4F7FF', command=viewassignmentswindow)
